@@ -3,11 +3,10 @@ import Logo from "../../assets/Logo/Logo-Full-Light.png";
 import { NavbarLinks } from "../../data/navbar-links";
 import { BsChevronDown } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { matchPath, useLocation, Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { matchPath, useLocation, Link, } from "react-router-dom";
+import {  useSelector } from "react-redux";
 import { categories } from "../../Services/apis";
 import { apiConnector } from "../../Services/connector";
-import { logout } from "../../Services/operations/apiAth";
 import ProfileDropdown from "../core/auth/ProfileDropDown";
 
 const Navbar = () => {
@@ -15,13 +14,9 @@ const Navbar = () => {
   const { user } = useSelector((state) => state.profile);
   const { totalItems } = useSelector((state) => state.cart);
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
   const location = useLocation();
   const [subLinks, setSubLinks] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  // console.log("printing account type in nvbar", user.accountType);
 
   const matchRoute = (route) => {
     return matchPath({ path: route }, location.pathname);

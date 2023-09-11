@@ -9,7 +9,6 @@ import {
 import RenderSteps from "../AddCourse/RenderSteps";
 import {
   getFullDetailsOfCourse,
-  fetchCourseDetails,
 } from "../../../Services/operations/courseDetailsAPI";
 
 export default function EditCourse() {

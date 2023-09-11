@@ -1,15 +1,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import ProgressBar from "@ramonak/react-progress-bar";
-// import { BiDotsVerticalRounded } from "react-icons/bi"
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 import { getUserEnrolledCourses } from "../../../Services/operations/profileAPI";
 
 const PurchaseHistory = () => {
   const { token } = useSelector((state) => state.auth);
-  const navigate = useNavigate();
 
   const [enrolledCourses, setEnrolledCourses] = useState(null);
   useEffect(() => {
@@ -17,7 +13,7 @@ const PurchaseHistory = () => {
       try {
         const res = await getUserEnrolledCourses(token); // Getting all the published and the drafted courses
 
-        console.log("in purchase history  0", res);
+        // console.log("in purchase history  0", res);
         // Filtering the published course out
         const filterPublishCourse = res.filter((ele) => ele.status !== "Draft");
         setEnrolledCourses(filterPublishCourse);
@@ -26,6 +22,7 @@ const PurchaseHistory = () => {
         console.log("Could not fetch enrolled courses.");
       }
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>

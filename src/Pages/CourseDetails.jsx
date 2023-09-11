@@ -98,7 +98,6 @@ function CourseDetails() {
     ratingAndReviews,
     instructor,
     studentsEnrolled,
-    createdAt,
   } = response.data[0];;
   const handleBuyCourse = () => {
     if (token) {

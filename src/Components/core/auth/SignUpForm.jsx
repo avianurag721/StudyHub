@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import Tab from "./Tab";
 import { toast } from "react-hot-toast";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setSignUpData } from "../../../reduxState/Slices/authSlice";
 import { useNavigate } from "react-router-dom";
 import { sendOtp } from "../../../Services/operations/apiAth";
 
 const SignUpForm = () => {
-  const { signUpData } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();

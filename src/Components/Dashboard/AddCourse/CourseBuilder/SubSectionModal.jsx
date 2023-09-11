@@ -43,7 +43,8 @@ export default function SubSectionModal({
       setValue("lectureDesc", modalData.description)
       setValue("lectureVideo", modalData.videoUrl)
     }
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
 
   // detect whether form is updated or not
   const isFormUpdated = () => {

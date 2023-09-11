@@ -6,7 +6,6 @@ import { buyCourse } from "../../../Services/operations/studentFeaturesAPI"
 
 
 export default function RenderTotalAmount() {
-  const BuyCourse=1 
   const { total, cart } = useSelector((state) => state.cart)
   const { token } = useSelector((state) => state.auth)
   const { user } = useSelector((state) => state.profile)

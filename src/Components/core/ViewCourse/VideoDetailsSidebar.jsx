@@ -38,6 +38,7 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
       setVideoBarActive(activeSubSectionId);
       console.log("printing active status", activeStatus);
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courseSectionData, courseEntireData, location.pathname]);
 
   return (
